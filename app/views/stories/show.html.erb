@@ -1,3 +1,20 @@
 <h1><%= @story.name %></h1>
 
+<% if @story.edits.any? %>
+  <h4>Here are the edits for this story:</h4>
+
+  <ul>
+    <% @story.edits.each do |edit| %>
+      <li>
+        <%= edit.text %> |
+        <%= link_to "Edit", edit_story_edit_path(@story, edit) %> |
+        <%= link_to "Delete", story_edit_path(@story, edit),
+                                  :data => {:confirm => "Are you sure?",
+                                                :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no entries yet!</p>
+<% end %>
 <p><%= link_to "Return to stories", stories_path %></p>
