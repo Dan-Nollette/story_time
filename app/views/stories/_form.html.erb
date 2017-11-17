@@ -1,0 +1,12 @@
+<%= form_for @story do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :creator_name %>
+  <%= f.text_field :creator_name %>
+  <br>
+  <%= f.label :image_identifier %>
+  <%= f.text_field :image_identifier %>
+  <br>
+  <%= f.submit %>
+<% end %>

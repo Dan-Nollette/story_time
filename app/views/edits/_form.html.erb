@@ -1,0 +1,11 @@
+<%= render('layouts/errors', :object => @edit) %>
+
+<%= form_for [@story, @edit] do |f| %>
+  <%= f.label :text %>
+  <%= f.text_field :text %>
+  <%= f.label :creator %>
+  <%= f.text_field :creator %>
+  <%= f.label :online %>
+  <%= f.text_field :online %>
+  <p><%= f.submit %></p>
+<% end %>
